@@ -77,11 +77,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-
-
-
                                                 <div class="row">
-
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="projectinput2"> الاتجاة </label>
@@ -97,20 +93,16 @@
                                                         </div>
                                                     </div>
                                                 </div>
-
-
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group mt-1">
                                                             <input type="checkbox"  value="1" name="active"
                                                                    id="switcheryColor4"
                                                                    class="switchery" data-color="success"
-
                                                                    @if($language -> active  == 1 ) checked @endif
                                                             />
                                                             <label for="switcheryColor4"
                                                                    class="card-title ml-1">الحالة </label>
-
                                                             @error('active')
                                                             <span class="text-danger">{{$message}}</span>
                                                             @enderror

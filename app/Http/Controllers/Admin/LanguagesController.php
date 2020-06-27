@@ -22,7 +22,6 @@ class LanguagesController extends Controller
             $language->save();
             return redirect()->route('admin.languages')->with(['success'=>'تم حفظ اللغة بنجاح']);
         }   catch (\Exception $exception){
-            dd($exception);
             return redirect()->route('admin.languages')->with(['error'=>'هنالك خطأ ما']);
         }
     }
@@ -32,25 +31,20 @@ class LanguagesController extends Controller
         if (!$language) {
             return redirect()->route('admin.languages')->with(['error' => 'هذه اللغة غير موجوده']);
         }
-
         return view('admin.languages.edit', compact('language'));
     }
 
     public function update($id, LanguageRequest $request)
     {
-
         try {
             $language = Language::find($id);
             if (!$language) {
                 return redirect()->route('admin.languages.edit', $id)->with(['error' => 'هذه اللغة غير موجوده']);
             }
-
-
             if (!$request->has('active'))
                 $request->request->add(['active' => 0]);
 
             $language->update($request->except('_token'));
-
             return redirect()->route('admin.languages')->with(['success' => 'تم تحديث اللغة بنجاح']);
 
         } catch (\Exception $exception) {

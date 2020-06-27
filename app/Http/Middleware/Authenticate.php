@@ -2,8 +2,8 @@
 
 namespace App\Http\Middleware;
 
-use http\Env\Request;
 use Illuminate\Auth\Middleware\Authenticate as Middleware;
+use Request;
 
 class Authenticate extends Middleware
 {
