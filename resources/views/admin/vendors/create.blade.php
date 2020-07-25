@@ -119,6 +119,18 @@
                                                 <div class="row">
                                                     <div class="col-md-6 ">
                                                         <div class="form-group">
+                                                            <label for="password"> كلمة المرور </label>
+                                                            <input type="password" id="password"
+                                                                   class="form-control" name="password">
+                                                            @error("password")
+                                                            <span class="text-danger"> {{$message}}</span>
+                                                            @enderror
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6 ">
+                                                        <div class="form-group">
                                                             <label for="pac-input"> العنوان </label>
                                                             <input type="text" id="pac-input"
                                                                    class="form-control" name="address">
@@ -138,7 +150,7 @@
                                                                    class="card-title ml-1">الحالة </label>
                                                             @error("active")
                                                             <span class="text-danger"> </span>
-                                                            @enderror
+                                                              @enderror
                                                         </div>
                                                     </div>
                                                 </div>

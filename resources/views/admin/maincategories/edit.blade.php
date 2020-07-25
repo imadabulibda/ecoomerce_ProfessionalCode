@@ -144,8 +144,7 @@
                                                               method="POST"
                                                               enctype="multipart/form-data">
                                                             @csrf
-                                                            <input name="id" value="{{$translation -> id}}"
-                                                                   type="hidden">
+
                                                             <div class="form-body">
                                                                 <h4 class="form-section"><i class="ft-home"></i> بيانات القسم </h4>
                                                                 <div class="row">

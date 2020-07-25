@@ -62,7 +62,9 @@
                                                         <td>{{$category -> name}}</td>
                                                         <td>{{$category -> translation_lang}}</td>
                                                         <td>{{$category -> getActive()}}</td>
-                                                        <td><img src="{{$category->photo}}" style="width: 85px;height: 85px" alt="{{$category->slug}}"></td>
+                                                        <td><img src="{{$category->photo}}"
+                                                                 style="width: 85px;height: 85px"
+                                                                 alt="{{$category->slug}}"></td>
                                                         <td>
                                                             <div class="btn-group" role="group"
                                                                  aria-label="Basic example">
@@ -73,8 +75,14 @@
                                                                 <a href="{{route('admin.maincategories.delete',$category -> id)}}"
                                                                    class="btn btn-outline-danger btn-min-width box-shadow-3 mr-1 mb-1">حذف</a>
 
-                                                                <a href="{{route('admin.maincategories.delete',$category -> id)}}"
-                                                                   class="btn btn-outline-warning btn-min-width box-shadow-3 mr-1 mb-1">تفعيل</a>
+                                                                <a href="{{route('admin.maincategories.status',$category -> id)}}"
+                                                                   class="btn btn-outline-warning btn-min-width box-shadow-3 mr-1 mb-1">
+                                                                    @if($category->active ==0)
+                                                                        تفعيل
+                                                                    @else
+                                                                        إلغاء تفعيل
+                                                                    @endif
+                                                                </a>
 
 
                                                             </div>
